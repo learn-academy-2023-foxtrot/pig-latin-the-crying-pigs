@@ -32,7 +32,14 @@ const App = () => {
       console.log("vowelsArray:", vowelsArray)
 
       // ACTION ITEM: your Pig Latin logic goes here!
-
+// Pseudocode:
+//input: string
+//output: a new string with "way" at the end
+//process: take the word and add way to the end, conditional statment to determine if the word contains a vowel at the beginning, .concat to add "way" to the end of each word
+// rewritten process: a conditional statement to check if the index of vowelsArray[0] is strictly equal to the index of eachWord[0] and if it is, return the string of eachWord with "way" added to the end by using the .concat method. 
+      if(vowelsArray[0] === eachWord[0]) {
+        return eachWord.concat("way")
+      }
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
     })
