@@ -40,6 +40,13 @@ const App = () => {
       if(vowelsArray[0] === eachWord[0]) {
         return eachWord.concat("way")
       }
+//Psuedocode:
+//Input: string
+//Output: a new string with "qu" and "ay" added to the end.
+//Process: .concat to add "ay" to the end of string. Add another conditional statement to check if the first syllable has "qu". .slice()/.split() to move "qu" to the end before "ay".
+      else if(eachWord.includes("qu")){
+        return eachWord.slice(2).concat("quay")
+      }
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
     })
