@@ -54,6 +54,13 @@ const App = () => {
       else if(vowelsArray.length === 0 && eachWord.includes("y")){
         return eachWord.slice(eachWord.indexOf("y")).concat(eachWord.slice(0, eachWord.indexOf("y")) + "ay")
       }
+//Pseudocode
+//Input: string
+//Output: a new string with "ay" added to the end and every letter before the vowel gets put to the end before "ay".
+//Process: .concat to add "ay" to the end. .slice() to reference the letters before the vowel and pair it with .concat() to move it to the end. Conditional statement. .indexOf() to reference the vowel. 
+      else if(eachWord.indexOf(vowelsArray)){
+        return eachWord.slice(eachWord.lastIndexOf(vowelsArray)).concat(eachWord.slice(eachWord.lastIndexOf(vowelsArray)) + "ay")
+      }
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
     })
