@@ -32,7 +32,35 @@ const App = () => {
       console.log("vowelsArray:", vowelsArray)
 
       // ACTION ITEM: your Pig Latin logic goes here!
-
+// Pseudocode:
+//input: string
+//output: a new string with "way" at the end
+//process: take the word and add way to the end, conditional statment to determine if the word contains a vowel at the beginning, .concat to add "way" to the end of each word
+// rewritten process: a conditional statement to check if the index of vowelsArray[0] is strictly equal to the index of eachWord[0] and if it is, return the string of eachWord with "way" added to the end by using the .concat method. 
+      if(vowelsArray[0] === eachWord[0]) {
+        return eachWord.concat("way")
+      }
+//Psuedocode:
+//Input: string
+//Output: a new string with "qu" and "ay" added to the end.
+//Process: .includes() to refernce where "qu" is being used, .concat to add "ay" to the end of string. Add another conditional statement to check if the first syllable has "qu". .slice() to move "qu" to the end before "ay".
+      else if(eachWord.includes("qu")){
+        return eachWord.slice(2).concat("quay")
+      }
+//pseudocode:
+// input: string
+//output: a new string with "y" added to the front of the word and "ay" to the end.
+// process: .concat to add "ay" to the end, another conditional statement, .slice() to take the "y" and move it to the front of the word,
+      else if(vowelsArray.length === 0 && eachWord.includes("y")){
+        return eachWord.slice(eachWord.indexOf("y")).concat(eachWord.slice(0, eachWord.indexOf("y")) + "ay")
+      }
+//Pseudocode
+//Input: string
+//Output: a new string with "ay" added to the end and every letter before the vowel gets put to the end before "ay".
+//Process: .concat to add "ay" to the end. .slice() to reference the letters before the vowel and pair it with .concat() to move it to the end. Conditional statement. .indexOf() to reference the vowel. 
+      else if(eachWord.indexOf(vowelsArray)){
+        return eachWord.slice(eachWord.lastIndexOf(vowelsArray)).concat(eachWord.slice(eachWord.lastIndexOf(vowelsArray)) + "ay")
+      }
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
     })
