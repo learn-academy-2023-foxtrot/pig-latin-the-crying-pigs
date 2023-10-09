@@ -58,8 +58,11 @@ const App = () => {
 //Input: string
 //Output: a new string with "ay" added to the end and every letter before the vowel gets put to the end before "ay".
 //Process: .concat to add "ay" to the end. .slice() to reference the letters before the vowel and pair it with .concat() to move it to the end. Conditional statement. .indexOf() to reference the vowel. 
-      else if(eachWord.indexOf(vowelsArray)){
-        return eachWord.slice(eachWord.lastIndexOf(vowelsArray)).concat(eachWord.slice(eachWord.lastIndexOf(vowelsArray)) + "ay")
+      else{
+        // console.log(vowelsArray[0])
+        return eachWord.substring(eachWord.indexOf(vowelsArray[0])) + eachWord.substring(0, eachWord.indexOf(vowelsArray[0])) + "ay"
+        //eachWord.substring(eachWord.indexOf(vowelsArray[0])) This indexOf finds the first vowel in the word and takes away the indexes before the first vowel. substring([3]), so it would take "thr" away.
+        //+ eachWord.substring(0, eachWord.indexOf(vowelsArray[0])) + "ay" This takes the substring and its index of zero gets places to the end along with "ay" added to the very end.
       }
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
@@ -114,7 +117,7 @@ const App = () => {
         </div>
         <p>{inputTranslated}</p>
       </div>
-      <footer>&copy; 2023 | Coded by: Your Names Here!</footer>
+      <footer>&copy; 2023 | Coded by: Tori and Ilene!</footer>
     </div>
   )
 }
